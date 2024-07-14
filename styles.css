@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: red;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.movie-list {
+    max-height: 360px; /* Set height for scrolling */
+    width: 500px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #444;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #2a2a2a; /* Dark grey background */
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    accent-color: red; /* Change checkbox color to red */
+}
+
+input[type="checkbox"]:checked {
+    background-color: black; /* Checkbox background when checked */
+    border: 2px solid red; /* Red border when checked */
+}
+
+input[type="checkbox"]:hover {
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Scrollbar customization */
+.movie-list::-webkit-scrollbar {
+    width: 14px; /* Width of the scrollbar */
+    background-color: #2a2a2a; /* Black background color */
+}
+
+.movie-list::-webkit-scrollbar-thumb {
+    background-color: #121212; /* Grey scrollbar thumb color */
+    border-radius: 6px; /* Rounded corners */
+}

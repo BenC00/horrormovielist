@@ -5,11 +5,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
-    
-    overflow: hidden; /* Prevent overflow */
-    
+    margin-top: 4%;
 }
 
 .container {
@@ -18,7 +15,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 600px; /* Constrain width */
-    overflow: hidden;
+    max-height: 60rem;
 }
 
 h1 {
@@ -119,5 +116,17 @@ button:active {
 
     h1 {
         font-size: 1.2rem;
+    }
+}
+
+@media (max-height: 900px) {
+    .movie-list {
+        height: 450px;
+    }
+}
+
+@media (max-height: 700px) {
+    .movie-list {
+        height: 250px;
     }
 }

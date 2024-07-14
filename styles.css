@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
-    color: #ffffff;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,6 +19,7 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: white;
 }
 
 ul {
@@ -29,10 +30,17 @@ ul {
 
 li {
     margin: 10px 0;
+    color: white;
+}
+
+.checked {
+    color: red;
+    text-decoration: line-through;
 }
 
 input[type="checkbox"] {
     margin-right: 10px;
+    
 }
 
 button {
@@ -44,6 +52,11 @@ button {
     color: #ffffff;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+button:active {
+    background-color: #121212;
 }
 
 .movie-list {
@@ -53,7 +66,7 @@ button {
     border: 1px solid #444;
     padding: 10px;
     margin-bottom: 20px;
-    background-color: #2a2a2a; /* Dark grey background */
+    background-color: #494848; /* Dark grey background */
 }
 
 label {
@@ -69,7 +82,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-    background-color: black; /* Checkbox background when checked */
+ /* Checkbox background when checked */
     border: 2px solid red; /* Red border when checked */
 }
 

@@ -260,31 +260,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const backToListButton = document.getElementById('backToListButton');
   const resetListButton = document.getElementById('resetListButton');
 
-  if (movieList) {
-      movies.forEach(movie => {
-          const listItem = document.createElement('li');
-          listItem.innerHTML = `<label>
-              <input type="checkbox" id="${movie.id}" /> ${movie.title}
-          </label>`;
-          movieList.appendChild(listItem);
+    if (movieList) {
+        movies.forEach(movie => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `<label>
+                <input type="checkbox" id="${movie.id}" /> ${movie.title}
+            </label>`;
+            movieList.appendChild(listItem);
 
-          const checkbox = document.getElementById(movie.id);
-          checkbox.checked = savedStates[movie.id] || false;
+            const checkbox = document.getElementById(movie.id);
+            checkbox.checked = savedStates[movie.id] || false;
 
-          if (checkbox.checked) {
-              listItem.style.textDecoration = "line-through";
-              listItem.style.color = "#888";
-          }
+            // Apply checked class based on saved state
+            if (checkbox.checked) {
+                listItem.classList.add('checked');
+            }
 
-          checkbox.addEventListener('change', () => {
-              savedStates[movie.id] = checkbox.checked;
-              localStorage.setItem('checkboxStates', JSON.stringify(savedStates));
+            checkbox.addEventListener('change', () => {
+                savedStates[movie.id] = checkbox.checked;
+                localStorage.setItem('checkboxStates', JSON.stringify(savedStates));
 
-              listItem.style.textDecoration = checkbox.checked ? "line-through" : "none";
-              listItem.style.color = checkbox.checked ? "#888" : "#000";
-          });
-      });
-  }
+                // Update class based on checkbox state
+                if (checkbox.checked) {
+                    listItem.classList.add('checked');
+                } else {
+                    listItem.classList.remove('checked');
+                }
+            });
+        });
+    }
 
   if (seenPageButton) {
       seenPageButton.addEventListener('click', () => {
